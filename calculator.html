@@ -1,53 +1,49 @@
-<!DOCTYPE html>
-<html>
-  <head>
-        <title>Calculator</title>
-      <link rel="icon" href="favicon.ico" type="image/x-icon">
-      <link rel="stylesheet" type="text/css" href="calculator.css">
-      <script src="calculator.js"></script>
-      
-  </head>
-    <body>
-      <h1>My Calculator</h1>
-      <div id= "calculatorBody">  
-        <div id="displaySection">
-            <input type="text" id="display"name="display" readonly="true" value="0.">
-        </div>
-        <div id="buttonRow1" class="buttonRow" >
-            
-                    <input type="button" id="C" name="C" value="C"  onclick='clearCalc()' class="numberButton"> 
-                    <input type="button" id="CE" name="CE" value="CE" onclick='clearErr()' class="numberButton"> 
-                    <input type="button" id="+/-" name="+/-" value="+/-" class="numberButton"> 
-                    <input type="button" id="Off" name="Off" value="Off" class="numberButton" style="width: 20%; font-size: .75em" onmouseout ='this.style.backgroundColor="#cc0000"' 
-onmouseover='this.style.backgroundColor="#000000"' onclick='if (window.confirm("Do you want to close the calculator?")) calcOff();'>
-             
-        </div>
-        <div id="buttonRow2" class="buttonRow">
-                    <input type="button" id="num7" name="num7" value="7" onclick='getNumber(7)' class="numberButton"> 
-                    <input type="button" id="num8" name="num8" value="8" onclick='getNumber(8)' class="numberButton"> 
-                    <input type="button" id="num9" name="num9" value="9" onclick='getNumber(9)' class="numberButton"> 
-                    <input type="button" id="mult*" name="mult*" value="*" class="numberButton"> 
-        </div>
-        <div id="buttonRow3" class="buttonRow">
-                    <input type="button" id="num4" name="num4" value="4" onclick='getNumber(4)' class="numberButton"> 
-                    <input type="button" id="num5" name="num5" value="5" onclick='getNumber(5)' class="numberButton"> 
-                    <input type="button" id="num6" name="num6" value="6" onclick='getNumber(6)' class="numberButton"> 
-                    <input type="button" id="divide" name="divide" value="/" class="numberButton"> 
-        </div>
-        <div id="buttonRow4" class="buttonRow">
-                    <input type="button" id="num1" name="num1" value="1" onclick='getNumber(1)' class="numberButton"> 
-                    <input type="button" id="num2" name="num2" value="2" onclick='getNumber(2)' class="numberButton"> 
-                    <input type="button" id="num3" name="num3" value="3" onclick='getNumber(3)' class="numberButton"> 
-                    <input type="button" id="add" name="add" value="+" class="numberButton"> 
-        </div>
-        <div id="buttonRow5" class="buttonRow">
-                    <input type="button" id="num0" name="num0" value="0" onclick='getNumber(0)' class="numberButton"> 
-                    <input type="button" id="decimal" name="decimal" value="." class="numberButton"> 
-                    <input type="button" id="equal" name="equal" value="=" class="numberButton"> 
-                    <input type="button" id="subtract" name="subtract" value="-" class="numberButton"> 
-        </div>
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8" />
+        <title>Calculator</title> 
+        <link rel="stylesheet" href="calculator.css" type="text/css"> 
+        <script src="calculator.js"></script> 
         
-
-   </div>
-    </body>
+    </head> 
+     <body>
+       <h1>My Calculator</h1>      
+        <div id="calculatorBody"> 
+            <div id="displaySection">
+                <input type="text" id="display" name="display" readonly="true" value="0.">
+            </div> 
+            <div id="buttonRow1" class="buttonRow"> 
+                <input type="button" id="clear" name="clear" value="c" onclick="clearNumbers()" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="ce" name="ce" value="ce" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')">
+                <input type="button" id="plusminus" name="plusminus" value="+/-" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')">
+                <input type="button" id="close" name="close" value="x" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')">
+            </div> 
+            <div id="buttonRow2" class="buttonRow"> 
+                <input type="button" id="num7" name="num7" onclick="calculatorApp.clickDigit(7);" value="7" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num8" name="num8" value="8" onclick="calculatorApp.clickDigit(8)" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num9" name="num9" value="9" onclick="calculatorApp.clickDigit(9)" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="multiply" name="multiply" value="*" onclick="calculatorApp.clickOperator('*');" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+            </div> 
+            <div id="buttonRow3" class="buttonRow"> 
+                <input type="button" id="num4" name="num4" value="4" onclick="calculatorApp.clickDigit(4);" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num5" name="num5" value="5" onclick="calculatorApp.clickDigit(5)" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num6" name="num6" value="6" onclick="calculatorApp.clickDigit(6);" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="divide" name="divide" value="/" onclick="calculatorApp.clickOperator('/')" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+            </div> 
+            <div id="buttonRow4" class="buttonRow"> 
+                <input type="button" id="num1" name="num1" value="1" onclick="calculatorApp.clickDigit(1);" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num2" name="num2" value="2" onclick="calculatorApp.clickDigit(2)" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="num3" name="num3" value="3" onclick="calculatorApp.clickDigit(3);" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="plus" name="plus" value="+" onclick="calculatorApp.clickOperator('+')" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+            </div> 
+            <div id="buttonRow5" class="buttonRow"> 
+                <input type="button" id="num0" name="num0" value="0" onclick="numPressed(value);" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="decimal" name="decimal" value="." class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="equal" name="equal" value="=" onClick="calculatorApp.clickEquals()" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+                <input type="button" id="minus" name="minus" value="-"  onclick="calculatorApp.clickOperator('-')" class="numberButton" onmousedown="this.classList.add('pressed')" onmouseup="this.classList.remove('pressed')"> 
+            </div> 
+        </div>
+       
+     </body> 
 </html>
