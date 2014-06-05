@@ -31,6 +31,7 @@ block {
     background-color:#777777;
     margin: 2px;
 }
+
 #displaySection input { 
  width : 80%; 
  height : 25px; 
@@ -39,28 +40,35 @@ block {
  text-align : right; 
  font-size: 1.5em;
 } 
-.numberButton { 
- width : 20%; 
- height : 80%; 
- background-color : #000000; 
- float : left; 
- margin: 2%; 
- color: white; 
- font-size: 1.2em; 
- font-family:"Lucida Console", Verdana, Arial;  
- border-radius:10px;
+
+
+
+.buttonRow input {
+    
+    display:block;
+    float: left;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 15pt;
+    width: 20%;
+    height: 80%;
+    margin: 2.5% 2.4%;
+    border-radius: 10px;
+    border: 3px outset white;
+    
 }
-#Off { 
- float : right; 
- margin-right: 5%; 
- background-color: #cc0000; 
- width: 10%; 
- height: 50%; 
- font-size: .5em; 
- font-family:"Lucida Console", Verdana, Arial;
-} 
-.numberButton:hover
-{
-  background-color:grey;
-  cursor:pointer;
+
+.buttonRow input:hover {
+    background-color: maroon;
+}
+
+.buttonRow #close  {
+    float : right;
+    margin-right: 5%;
+    width:10%;
+    height: 50%;
+    color: white;
+    font-size: .5em;
+    background-color: red;
 }
