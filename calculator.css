@@ -66,9 +66,9 @@ block {
 .buttonRow #close  {
     float : right;
     margin-right: 5%;
-    width:10%;
+    width:15%;
     height: 50%;
     color: white;
-    font-size: .5em;
+    font-size: 10pt;
     background-color: red;
 }
